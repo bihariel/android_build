@@ -82,33 +82,31 @@ JNI_H_INCLUDE := $(call include-path-for,libnativehelper)/nativehelper
 # interdependencies.
 #
 FRAMEWORKS_BASE_SUBDIRS := \
-$(addsuffix /java, \
-core \
-graphics \
-location \
-media \
-media/mca/effect \
-media/mca/filterfw \
-media/mca/filterpacks \
-drm \
-opengl \
-sax \
-telephony \
-wifi \
-keystore \
-icu4j \
-voip \
-fmradio \
-)
+	$(addsuffix /java, \
+	    core \
+	    graphics \
+	    location \
+	    media \
+	    media/mca/effect \
+	    media/mca/filterfw \
+	    media/mca/filterpacks \
+	    drm \
+	    opengl \
+	    sax \
+	    telephony \
+	    wifi \
+	    keystore \
+	    fmradio \
+	 )
 
 #
 # A version of FRAMEWORKS_BASE_SUBDIRS that is expanded to full paths from
-# the root of the tree. This currently needs to be here so that other libraries
+# the root of the tree.  This currently needs to be here so that other libraries
 # and apps can find the .aidl files in the framework, though we should really
 # figure out a better way to do this.
 #
 FRAMEWORKS_BASE_JAVA_SRC_DIRS := \
-$(addprefix frameworks/base/,$(FRAMEWORKS_BASE_SUBDIRS))
+	$(addprefix frameworks/base/,$(FRAMEWORKS_BASE_SUBDIRS))
 
 #
 # A list of all source roots under frameworks/support.
@@ -126,7 +124,7 @@ FRAMEWORKS_SUPPORT_SUBDIRS := \
 # the root of the tree.
 #
 FRAMEWORKS_SUPPORT_JAVA_SRC_DIRS := \
-$(addprefix frameworks/support/,$(FRAMEWORKS_SUPPORT_SUBDIRS))
+	$(addprefix frameworks/support/,$(FRAMEWORKS_SUPPORT_SUBDIRS))
 
 #
 # A list of support library modules.
